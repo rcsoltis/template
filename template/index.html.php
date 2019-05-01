@@ -20,11 +20,7 @@
 
 <body>
     <?php include 'includes/nav.inc.html.php';?>
-
-    <header id="home">
-
-        <h1>Heading 1(h1)</h1>Large hero image behing heading (h1)
-    </header>
+    <?php include 'includes/header.inc.html.php';?>
 
     <main>
         <section>
@@ -80,28 +76,9 @@
             </section>
         </div>
     </main>
-    <footer>
-        <h3>Header (h3)</h3>
-
-        <form id="contact">
-            <label>First name:</label><input type="text" name="fname">
-            <label>Last name:</label><input type="text" name="lname">
-            <label>Question or Comment?</label><textarea rows="6"></textarea><br>
-            <input type="submit" value="Submit">
-        </form>
-        <div class="section group">
-            <aside class="col span_6_of_12">
-                (Weather Feed)
-                <p></p>
-
-            </aside>
-            <ul class="col span_6_of_12">
-                <li><a href="#" class="fa fa-facebook"></a></li>
-                <li><a href="#" class="fa fa-twitter"></a></li>
-            </ul>
-            <p>Copyright&copy;2019 Ace in the Hole</p>
-        </div>
-    </footer>
+    
+    <?php include 'includes/footer.inc.html.php';?>
+    
     <!--Link to external JavaScript stylesheet for nav-->
 
     <script src="js/style.js">
