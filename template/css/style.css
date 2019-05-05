@@ -41,6 +41,7 @@ nav {
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 2;
   /* Hide the links inside the navigation menu mobile only */
   /* Style the hamburger menu */
   /*End navbar*/
@@ -142,70 +143,49 @@ footer {
   background-color: #000000;
   color: #ffffff;
   text-align: center;
-  /*style for social-media icons*/
-}
-footer aside {
-  background-color: #ffffff;
-  color: #000000;
-}
-footer aside p {
-  padding-bottom: 70%;
 }
 footer h3 {
   font-size: 1.5em;
 }
-footer ul {
-  margin-top: 0;
-  padding-left: 1.25em;
+footer aside {
+  background-color: #ffffff;
+  color: #000000;
+  display: block;
+  margin-bottom: 2em;
+  margin-top: 3em;
 }
-footer li {
-  display: inline;
-  padding-right: .5em;
-  font-size: 2em;
-}
-footer li a {
+footer aside p {
+  background-color: #000000;
   color: #ffffff;
-  text-decoration: none;
-  padding: .5em;
-  margin: .2em .3em .2em 0;
-  /*change social icons when hovered over*/
 }
-footer li a:hover {
-  color: #ff0000;
-  opacity: 0.7;
-}
-footer form {
+/*styling for comment form*/
+form {
   text-align: left;
   margin: 1em;
-  /*style for copyright*/
 }
-footer form label {
+form label {
   float: left;
   padding-top: 2em;
   width: 100%;
 }
-footer form input[type="text"] {
+form input[type="text"] {
   background-color: #b3b3b3;
   margin-top: 1em;
   padding-top: 1em;
   width: 100%;
 }
-footer form input[type=submit] {
+form input[type=submit] {
   background-color: #ffffff;
   border: solid 0.1em #ff0000;
   color: #000000;
   font-size: 1.2em;
   margin-top: 1em;
 }
-footer form textarea {
+form textarea {
   background-color: #b3b3b3;
   box-sizing: border-box;
   margin-top: 1em;
   width: 100%;
-}
-footer form p {
-  margin-bottom: 0;
-  padding-bottom: 1em;
 }
 /*
 
@@ -304,10 +284,15 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
   main section form label {
     display: inline-block;
     /*padding: 0 .5em 0 1em;*/
-    font-size: 1.3em;
-    width: 25%;
+    float: none;
+    font-size: 1.25em;
+    width: 30%;
   }
-  main section form input[type="text"] {
+  main section form label:last-of-type {
+    width: 65%;
+  }
+  main section form input[type="text"],
+  main section form input[type="email"] {
     background-color: #b3b3b3;
     padding-top: 2em;
     width: 70%;
@@ -318,10 +303,24 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
     width: 3%;
   }
   main section form input[type=submit] {
-    margin-left: 1.3em;
+    margin-left: 1.2em;
     font-size: 1.75em;
   }
   /*style footer*/
+  footer h3 {
+    padding-top: 1em;
+  }
+  footer aside {
+    background-color: #ffffff;
+    margin: 0;
+    flex: 1;
+  }
+  footer aside p {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: .55em;
+    margin-bottom: 2em;
+  }
   footer form label {
     display: inline-block;
     padding-left: .25em;
@@ -343,14 +342,9 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
     margin-left: 1.3em;
     font-size: 1.75em;
   }
-  footer h3 {
-    padding-top: 1em;
-  }
-  footer ul {
-    margin-left: 1.5em;
-  }
-  footer li {
-    font-size: 1.25em;
-    margin-left: .75em;
+  footer .section,
+  footer .group {
+    border-top: solid 0.75em #ff0000;
+    display: flex;
   }
 }

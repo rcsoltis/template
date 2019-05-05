@@ -29,6 +29,7 @@ nav {
     position: sticky;
     top: 0;
     width: 100%;
+    z-index: 2;
 
 
     /* Hide the links inside the navigation menu mobile only */
@@ -154,83 +155,60 @@ footer {
     color: @color1;
     text-align: center;
 
-    aside {
-        background-color: @color1;
-        color: @color2;
-
-        p {
-            padding-bottom: 70%;  
-        }
-    }
-
     h3 {
         font-size: 1.5em;
     }
 
-    /*style for social-media icons*/
-    ul {
-        margin-top: 0;
-        padding-left: 1.25em;
-    }
+    aside {
+        background-color: @color1;
+        color: @color2;
+        display: block;
+        margin-bottom: 2em;
+        margin-top: 3em;
 
-    li {
-        display: inline;
-        padding-right: .5em;
-        font-size: 2em;
-
-        a {
-            color: @color1;
-            text-decoration: none;
-            padding: .5em;
-            margin: .2em .3em .2em 0;
-
-            /*change social icons when hovered over*/
-            &:hover {
-                color: @color3;
-                opacity: 0.7;
-            }
-        }
-    }
-
-    form {
-        text-align: left;
-        margin: 1em;
-
-        label {
-            float: left;
-            padding-top: 2em;
-            width: 100%;
-        }
-
-        input[type="text"] {
-            background-color: @lightColor4;
-            margin-top: 1em;
-            padding-top: 1em;
-            width: 100%;
-        }
-
-        input[type=submit] {
-            background-color: @color1;
-            border: solid .1em @color3;
-            color: @color2;
-            font-size: 1.2em;
-            margin-top: 1em;
-        }
-
-        textarea {
-            background-color: @lightColor4;
-            box-sizing: border-box;
-            margin-top: 1em;
-            width: 100%;
-        }
-
-        /*style for copyright*/
         p {
-            margin-bottom: 0;
-            padding-bottom: 1em;
+            background-color: @color2;
+            color: @color1;
         }
     }
 }
+
+/*styling for comment form*/
+
+form {
+    text-align: left;
+    margin: 1em;
+
+    label {
+        float: left;
+        padding-top: 2em;
+        width: 100%;
+    }
+
+    input[type="text"] {
+        background-color: @lightColor4;
+        margin-top: 1em;
+        padding-top: 1em;
+        width: 100%;
+    }
+
+    input[type=submit] {
+        background-color: @color1;
+        border: solid .1em @color3;
+        color: @color2;
+        font-size: 1.2em;
+        margin-top: 1em;
+    }
+
+    textarea {
+        background-color: @lightColor4;
+        box-sizing: border-box;
+        margin-top: 1em;
+        width: 100%;
+    }
+
+}
+
 
 /*
 
@@ -262,9 +240,9 @@ The following CSS affects all screen sizes larger than 480 pixels wide.
         li {
             display: inline;
             font-size: .6em;
-            
+
             a {
-                
+
                 &:hover {
                     color: @color3;
                 }
@@ -361,19 +339,24 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
     main {
         section {
             p {
-              padding: 0 1em;  
+                padding: 0 1em;
             }
-            
+
             form {
 
                 label {
                     display: inline-block;
                     /*padding: 0 .5em 0 1em;*/
-                    font-size: 1.3em;
-                    width: 25%;
+                    float: none;
+                    font-size: 1.25em;
+                    width: 30%;
+                    &:last-of-type {
+                        width: 65%;
+                    }
                 }
 
-                input[type="text"] {
+                input[type="text"],
+                input[type="email"] {
                     background-color: @lightColor4;
                     padding-top: 2em;
                     width: 70%;
@@ -386,7 +369,7 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
                 }
 
                 input[type=submit] {
-                    margin-left: 1.3em;
+                    margin-left: 1.2em;
                     font-size: 1.75em;
                 }
             }
@@ -397,8 +380,24 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
     /*style footer*/
 
     footer {
+         h3 {
+            padding-top: 1em;
+        }
+        
+        aside {
+            background-color: @color1;
+            margin: 0;
+            flex: 1;
+            p {
+                background-color: @color1;
+                color: @color2;
+                font-size: .55em;
+                margin-bottom: 2em;
+            }
+        }
         form {
 
+        
             label {
                 display: inline-block;
                 padding-left: .25em;
@@ -425,17 +424,13 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
             }
         }
 
-        h3 {
-            padding-top: 1em;
-        }
-
-        ul {
-            margin-left: 1.5em;
-        }
-
-        li {
-            font-size: 1.25em;
-            margin-left: .75em;
-        }
+           .section,
+    .group {
+         border-top: solid .75em @color3;
+        display: flex; 
     }
+
+    }
+    
+
 }
