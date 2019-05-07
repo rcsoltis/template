@@ -111,8 +111,9 @@ main {
 
     section {
         padding: .25em 1em 1em 1em;
+        border-bottom: solid .5em @color3;
 
-        &:nth-of-type(2n) {
+        &:nth-child(odd) {
             background-color: @color1;
             color: @color2;
         }
@@ -161,6 +162,7 @@ footer {
 
     aside {
         background-color: @color1;
+        border-bottom: solid .5em @color3;
         color: @color2;
         display: block;
         margin-bottom: 2em;
@@ -176,8 +178,14 @@ footer {
 /*styling for comment form*/
 
 form {
+
+    h3 {
+        margin-top: 1em;
+    }
+
     text-align: left;
     margin: 1em;
+
 
     label {
         float: left;
@@ -293,6 +301,17 @@ The following CSS affects all screen sizes larger than 480 pixels wide.
             text-decoration: none;
         }
     }
+
+    .col {
+        margin: 0;
+    }
+
+    .section,
+    .group {
+
+        display: flex;
+    }
+
 }
 
 
@@ -350,10 +369,12 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
                     float: none;
                     font-size: 1.25em;
                     width: 30%;
+
                     &:last-of-type {
                         width: 65%;
                     }
                 }
+
 
                 input[type="text"],
                 input[type="email"] {
@@ -380,14 +401,15 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
     /*style footer*/
 
     footer {
-         h3 {
+        h3 {
             padding-top: 1em;
         }
-        
+
         aside {
             background-color: @color1;
             margin: 0;
             flex: 1;
+
             p {
                 background-color: @color1;
                 color: @color2;
@@ -395,9 +417,10 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
                 margin-bottom: 2em;
             }
         }
+
         form {
 
-        
+
             label {
                 display: inline-block;
                 padding-left: .25em;
@@ -424,13 +447,10 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
             }
         }
 
-           .section,
-    .group {
-         border-top: solid .75em @color3;
-        display: flex; 
-    }
+
 
     }
-    
+
+
 
 }
